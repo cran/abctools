@@ -6,9 +6,9 @@
 Summary statistics selection for ABC inference using estimated posterior error. 
 }
 \usage{
-stage2(obs, param, sumstats, obspar = NULL, chosen, dsets = 100, sumsubs = 1:ncol(sumstats), 
-limit = length(sumsubs), do.only = NULL, do.err = FALSE, final.dens = FALSE, 
-verbose = TRUE, ...)
+stage2(obs, param, sumstats, obspar = NULL, chosen, dsets = 100, 
+sumsubs = 1:ncol(sumstats), limit = length(sumsubs), do.only = NULL, do.err = FALSE, 
+final.dens = FALSE, verbose = TRUE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
