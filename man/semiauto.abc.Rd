@@ -7,8 +7,8 @@ Performs semi-automatic ABC based on summary statistics regression.
 }
 \usage{
 semiauto.abc(obs, param, sumstats, obspar = NULL, abcmethod = abc, saprop = 0.5, 
-abcprop = 0.5, overlap = FALSE, satr = list(), plot = FALSE, verbose = TRUE, do.err = FALSE, 
-final.dens = FALSE, errfn = rsse, ...)
+abcprop = 0.5, overlap = FALSE, satr = list(), plot = FALSE, verbose = TRUE, 
+do.err = FALSE, final.dens = FALSE, errfn = rsse, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
