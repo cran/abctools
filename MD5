@@ -1,4 +1,4 @@
-1521f7aa4966ca2e517c4beb1402f6f9 *DESCRIPTION
+b17ffd590b6d29de0ceda7377ae8d7f3 *DESCRIPTION
 f880dead90f936cbd7d45499677dca9a *NAMESPACE
 b7033575f4fe59fa7703f0bdee540a3d *R/AS.select.R
 b8f3e829d08b13478cc2236cd5452c4e *R/AS.test.R
@@ -20,16 +20,13 @@ f2d51bf7c7277ca23dd66452a6ae53ec *R/semiauto.abc.R
 463e864949233d6509b324c7c57950e2 *data/coal.rda
 fedd805931811753a7c55306611fd120 *data/coalobs.rda
 fa4887ef080fb86d19f358af4cdcbe1c *data/datalist
-91628874ed68d4ccbf6542963768745a *inst/doc/coverage.R
-2ee01932fdd704e73c7e2bf1b1cdae82 *inst/doc/coverage.Rnw
-42605e8799fb091f27f31e80bd2f216c *inst/doc/coverage.pdf
 2a0ddc2905583bc8aa3fb98db59fcb72 *man/AS.select.Rd
 6d9a99d54b5ec49785b1b4a5e70b03ca *man/AS.test.Rd
-db416be4522ba3c664459e231facebb8 *man/abctools-package.Rd
+d704c48833ad4e82be2362477100fc38 *man/abctools-package.Rd
 02f818968388ce36b9a54c3ae4b43bd9 *man/coal.Rd
 7fc06c87dec3b13e8a9f15d915c60693 *man/combmat.Rd
-85e6c1c36aec90201e4d4da2dda455af *man/cov.pi.Rd
-5c3da6eda9f50f4e4e96e8a0eb4f1502 *man/mc.ci.Rd
+effd1a9b33a7eab1a97cd46a5421964f *man/cov.pi.Rd
+e70ad0e6455c407aad3dc1c38616bf60 *man/mc.ci.Rd
 710864cf9fc4f17eaebc081a15ea9fb7 *man/mincrit.Rd
 ba1d519636c3e866b3dc7ec6ea493b70 *man/nn.ent.Rd
 e15f3a69d2d18911a515a3994bc02306 *man/pls.abc.Rd

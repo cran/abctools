@@ -106,7 +106,6 @@ nacc.min = 20)
   property is satisfied).  Various diagnostics are provided to judge this
   easily, and determine what happens as the ABC threshold is varied.  Raw
   results are also returned which can be investigated in more detail
-  (See vignette.)
 
   All ABC analyses use a rejection sampling algorithm implemented by the
   \code{\link{abc}} package.  The user may specify regression
@@ -150,8 +149,8 @@ Dennis Prangle
 }
 
 \examples{
-  ##The examples below are chosen to run relatively quickly (<5 mins).  See the vignette
-  ##for more substantive examples.
+  ##The examples below are chosen to run relatively quickly (<5 mins)
+  ##and do not represent recommended tuning choices.
   \dontrun{
   data(musigma2)
   library(ggplot2)

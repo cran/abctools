@@ -81,8 +81,8 @@ Dennis Prangle
 }
 
 \examples{
-  ##The examples below are chosen to run relatively quickly (<5 mins).  See the vignette
-  ##for more substantive examples.
+  ##The examples below are chosen to run relatively quickly (<5 mins)
+  ##and do not represent recommended tuning choices.
   \dontrun{
   index <- sample(1:2, 1E4, replace=TRUE)
   sumstat <- ifelse(index==1, rnorm(1E4,0,1), rnorm(1E4,0,rexp(1E4,1)))
