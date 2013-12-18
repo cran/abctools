@@ -1,5 +1,0 @@
-%\VignetteIndexEntry{Using coverage commands from abctools}
-\documentclass{article}
-\begin{document}
-%This is a dummy document which exists soley to index the coverage.pdf file in this folder
-\end{document}
