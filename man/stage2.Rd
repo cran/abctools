@@ -37,8 +37,9 @@ final.dens = FALSE, verbose = TRUE, ...)
   \item{sumsubs}{an index into the subsets considered during the algorithm.}
 }
 \references{
-Blum, M. G. B, Nunes, M. A., Prangle, D. and Sisson, S. A. (2013) A comparative review of dimension reduction methods in approximate Bayesian 
-computation. \emph{Stat. Sci. (to appear)}.\cr\cr
+Blum, M. G. B, Nunes, M. A., Prangle, D. and Sisson, S. A. (2013) A
+comparative review of dimension reduction methods in approximate
+Bayesian computation. \emph{Stat. Sci.} \bold{28}, Issue 2, 189--208.\cr\cr
 Nunes, M. A. and Balding, D. J. (2010) On Optimal Selection of Summary Statistics for Approximate Bayesian Computation.  \emph{Stat. Appl. Gen. Mol. Biol.} \bold{9}, Iss. 1, Art. 34.
 }
 \author{Matt Nunes}

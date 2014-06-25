@@ -109,7 +109,10 @@ double *x,*D;
  
 {
 
-int i,j, one=1,zero=0, l,m, last=*k-1;
+int i,j, l,m, last=*k-1;
+
+/* MAN: unused variables one, zero 24/6/14
+one=1, zero=0, */
 int en=*lx, p=*cols; 
 
 double *nearest=calloc(*k,sizeof(double));
@@ -175,7 +178,11 @@ double *x,*D;
 
 {
 
-int i,j, one=1, lxlow=*lx-1;
+int i,j, one=1; 
+/* MAN 24/6/14 unused variable lxlow
+lxlow=*lx-1;	*/
+
+
 double *dvec,*sn;
 double *sx=calloc(*lx,sizeof(double));
 int *o=calloc(*lx,sizeof(int));
@@ -260,7 +267,8 @@ double norm2(double *x,int *n){
 
 int one=1;
 
-F77_CALL(dnrm2)(n,x,&one);
+/* DP: add return here v0.3-2 */
+return F77_CALL(dnrm2)(n,x,&one);
 
 }
 

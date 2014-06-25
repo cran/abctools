@@ -1,4 +1,4 @@
-selectsumm <-function (obs,param, sumstats, obspar=NULL, ssmethod, verbose=TRUE,final.dens=FALSE, ...) {
+selectsumm <-function (obs,param, sumstats, obspar=NULL, ssmethod = mincrit, verbose=TRUE,final.dens=FALSE, ...) {
 
 if(!is.matrix(obs)|is.data.frame(obs)){
         obs<-matrix(obs,nrow=1)

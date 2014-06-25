@@ -24,11 +24,11 @@ aargind <- match(names(argl),"abcmethod")
 
 tolargind<-which(!is.na(aargind))
 
-if (length(aargind)==0){
+if (length(tolargind)==0){
         stop("'abcmethod' is missing")
 }
 
-abcmethod<-eval(argl[[aargind]])
+abcmethod<-eval(argl[[tolargind]])
 
 sumstats<-sumstats[,sumsubs]
 obs<-obs[,sumsubs]
@@ -56,7 +56,7 @@ if (nrow(cm) < chosen) {
 if (length(chosen) == 1) {
         chosen <- which(cm[chosen, ] == 1)
 }
-l.true <- abc(obs[chosen], param, sumstats[, chosen], tol = eps2, ...)
+l.true <- abc(obs[chosen], param, sumstats[, chosen], tol = eps2, method="rejection",...)
 closest <- which(l.true$region)
 obss <- sumstats[closest,]
 obst <- param[closest,]

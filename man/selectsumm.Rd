@@ -6,7 +6,7 @@ Generic function for selecting summary statistics in ABC inference.
 }
 \description{The function implements functions which implement summary statistics selection methods.}
 \usage{
-selectsumm(obs, param, sumstats, obspar = NULL, ssmethod, verbose = TRUE, 
+selectsumm(obs, param, sumstats, obspar = NULL, ssmethod = mincrit, verbose = TRUE, 
 final.dens = FALSE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
