@@ -6,7 +6,7 @@ Test for relative approximate sufficiency between two posterior samples.
 }
 \description{The function tests to determine adding a (set of) statistics is informative in ABC inference.}
 \usage{
-AS.test(grid = 10, x1, x2, supp)
+AS.test(grid = 10, x1, x2, supp=NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -21,8 +21,9 @@ AS.test(grid = 10, x1, x2, supp)
 \item{extreme}{a boolean value indicating whether the alternative posterior sample is more informative than the first (i.e. the extra summary statistics add information.}
 }
 \references{
-Blum, M. G. B, Nunes, M. A., Prangle, D. and Sisson, S. A. (2013) A comparative review of dimension reduction methods in approximate Bayesian 
-computation. \emph{Stat. Sci. (to appear)}.\cr\cr
+Blum, M. G. B, Nunes, M. A., Prangle, D. and Sisson, S. A. (2013) A
+comparative review of dimension reduction methods in approximate
+Bayesian computation. \emph{Stat. Sci.} \bold{28}, Issue 2, 189--208.\cr\cr
 Joyce, P. and P. Marjoram (2008) Approximately sufficient statistics and Bayesian computation. \emph{Stat. Appl. Gen. Mol. Biol.} \bold{7} Article 26.
 }
 \author{Matt Nunes}

@@ -8,9 +8,9 @@ Summary statistics selection using approximate sufficiency.
 This function uses approximate sufficiency to assess subsets of summary statistics for ABC inference.
 }
 \usage{
-AS.select(obs, param, sumstats, obspar=NULL, abcmethod=abc, grid=10, inturn=FALSE, 
-limit=ncol(sumstats), allow.none=TRUE, do.err=FALSE, final.dens=FALSE, 
-errfn=rsse,...)
+AS.select(obs, param, sumstats, obspar=NULL, abcmethod=abc, 
+grid=10, inturn=TRUE, limit=ncol(sumstats), allow.none=FALSE, 
+do.err=FALSE, final.dens=FALSE, errfn=rsse,...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -37,8 +37,9 @@ errfn=rsse,...)
 }
 
 \references{
-Blum, M. G. B, Nunes, M. A., Prangle, D. and Sisson, S. A. (2013) A comparative review of dimension reduction methods in approximate Bayesian 
-computation. \emph{Stat. Sci. (to appear)}.\cr\cr
+Blum, M. G. B, Nunes, M. A., Prangle, D. and Sisson, S. A. (2013) A
+comparative review of dimension reduction methods in approximate
+Bayesian computation. \emph{Stat. Sci.} \bold{28}, Issue 2, 189--208.\cr\cr
 Joyce, P. and P. Marjoram (2008) Approximately sufficient statistics and Bayesian computation. \emph{Stat. Appl. Gen. Mol. Biol.} \bold{7} Article 26.
 }
 \author{Matt Nunes}
@@ -67,8 +68,8 @@ obsstats<-matrix(coalobs[1,4:6],nrow=1)
 # example of AS.select:
 
 \dontrun{
-tmp<-AS.select(obsstats, param, simstats,tol=.1,method="neuralnet",nument=5,
-allow.none=FALSE,inturn=TRUE)
+tmp <-AS.select(obsstats, param, simstats, tol=.1, method="neuralnet",
+nument=5, allow.none=FALSE, inturn=TRUE)
 
 tmp$best
 }

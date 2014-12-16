@@ -10,21 +10,21 @@ Coverage property diagnostics
   These functions produce diagnostic statistics for an ABC analysis to
   judge when the tolerance level is small enough to produce roughly
   no approximation error.  This is done by running analyses for many
-  test data sets and assessing whether the results satisfy the "coverage
+  pseudo-observed test data sets and assessing whether the results satisfy the "coverage
   property" (roughly speaking: credible intervals have the claimed
   coverage levels).
 }
 \usage{
-cov.pi(param, sumstat, testsets, tol, eps, diagnostics = c(), multicore =
-FALSE, cores, method = "rejection", nacc.min=20, ...)
+cov.pi(param, sumstat, testsets, tol, eps, diagnostics = c(), 
+multicore = FALSE, cores, method = "rejection", nacc.min=20, ...)
 
-cov.mc(index, sumstat, testsets, tol, eps, diagnostics = c(), multicore =
-FALSE, cores, method = "rejection", nacc.min=20, ...)
+cov.mc(index, sumstat, testsets, tol, eps, diagnostics = c(), 
+multicore = FALSE, cores, method = "rejection", nacc.min=20, ...)
 
 covstats.pi(raw, diagnostics = c("KS", "CGR"), nacc.min = 20)
 
-covstats.mc(raw, index, diagnostics = c("freq", "loglik.binary", "loglik.multi"), 
-nacc.min = 20)
+covstats.mc(raw, index, diagnostics = c("freq", "loglik.binary", 
+"loglik.multi"), nacc.min = 20) 
 }
 \arguments{
   \item{param}{
@@ -32,9 +32,9 @@ nacc.min = 20)
     rows as \code{sumstat} and contain numeric values only.
 }
   \item{index}{
-    A vector of model indices. Any value which can be convert to factor
-    is ok (e.g. character or numeric entries).  It must have the same length as
-    \code{nrow(sumstat)}.
+    A vector of model indices. Any value which can be converted to
+    factor is ok (e.g. character or numeric entries).  It must have the
+    same length as \code{nrow(sumstat)}.
 }
   \item{sumstat}{
     A data frame of summary statistic values whose the ith row has been
@@ -58,7 +58,7 @@ nacc.min = 20)
     Allowable values for parameter inference are "KL" (Kullback-Leibler
     based test) or "CGR" (Cook, Gelman and Rubin test). Allowable values
     for model choice are "freq" (a separate frequency-based test for
-    each model), "loglik.binary" (a separate log-likelihood based test
+    each model), "loglik.binary" (a separate \cr log-likelihood based test
     for each model) or "loglik.multi" (single log-likelihood based test).  If
     \code{diagnostics} is empty only raw results will be returned.
 }
@@ -96,17 +96,19 @@ nacc.min = 20)
   (parameter inference) or \code{cov.mc} (model choice) which outputs raw
   results and diagnostics (see below) (iii) the output can be passed to
   \code{covstats.pi} or \code{covstats.mc} if further diagnostics are
-  required later (or to find diagnostics for a subset of test sets).
+  required later (or to find diagnostics for a subset of the pseudo-observed
+  data).
 
   The \code{cov.pi} and \code{cov.mc} functions operate by performing
   many ABC analyses.  The user specifies which datasets amongst those
-  simulated will be analysed.  The results of each analysis are compared
-  to the known model/parameters which produced the data to see whether
-  they are consistent in a particular sense (i.e. if the coverage
-  property is satisfied).  Various diagnostics are provided to judge this
-  easily, and determine what happens as the ABC threshold is varied.  Raw
-  results are also returned which can be investigated in more detail
-
+  simulated will used as pseudo-observed "test" data to be analysed.
+  The results of each analysis are compared to the known
+  model/parameters which produced the data to see whether they are
+  consistent in a particular sense (i.e. if the coverage property is
+  satisfied). Various diagnostics are provided to judge this easily, and
+  determine what happens as the ABC threshold is varied.  Raw results
+  are also returned which can be investigated in more detail.
+  
   All ABC analyses use a rejection sampling algorithm implemented by the
   \code{\link{abc}} package.  The user may specify regression
   post-processing as part of this analysis.
@@ -160,25 +162,29 @@ Dennis Prangle
   covdiag <- cov.pi(param=parameters, sumstat=sumstats, testsets=1:100, 
   tol=seq(0.1,1,by=0.1), diagnostics=c("KS"))
 
-  qplot(x=tol, y=pvalue, facets=.~parameter, data=covdiag$diag) #Plot of diagnostic results
-  qplot(x=mu, data=subset(covdiag$raw, tol==0.5)) #Plot of raw results for tol=0.5
-  qplot(x=sigma2, data=subset(covdiag$raw, tol==0.5)) #Plot of raw results for tol=0.5
+  #Plot of diagnostic results
+  qplot(x=tol, y=pvalue, facets=.~parameter, data=covdiag$diag) 
+  #Plot of raw results for tol=0.5
+  qplot(x=mu, data=subset(covdiag$raw, tol==0.5)) 
+  #Plot of raw results for tol=0.5
+  qplot(x=sigma2, data=subset(covdiag$raw, tol==0.5)) 
 
-  cgrout <- covstats.pi(covdiag$raw, diagnostics="CGR") #Compute CGR statistic as well
-  qplot(x=tol, y=pvalue, facets=.~parameter, data=cgrout) #Plot CGR diagnostic
+  #Compute CGR statistic and plot
+  cgrout <- covstats.pi(covdiag$raw, diagnostics="CGR") 
+  qplot(x=tol, y=pvalue, facets=.~parameter, data=cgrout) 
 
   ##Model choice example, based on simple simulated data
   index <- sample(1:2, 1E4, replace=TRUE)
   sumstat <- ifelse(index==1, rnorm(1E4,0,1), rnorm(1E4,0,rexp(1E4,1)))
   sumstat <- data.frame(ss=sumstat)
-  covdiag <- cov.mc(index=index, sumstat=sumstat, testsets=1:100, tol=seq(0.1,1,by=0.1), 
-  diagnostics=c("freq"))
+  covdiag <- cov.mc(index=index, sumstat=sumstat, testsets=1:100, 
+  tol=seq(0.1,1,by=0.1), diagnostics=c("freq"))
   qplot(x=tol, y=pvalue, data=covdiag$diag)
-  llout <- covstats.mc(covdiag$raw, index=index, diagnostics="loglik.binary")
+  llout <- covstats.mc(covdiag$raw, index=index, 
+  diagnostics="loglik.binary")
   qplot(x=tol, y=pvalue, data=llout)
   mc.ci(covdiag$raw, tol=0.5, modname=1, modtrue=index[1:200])
   }
 }
 
 \keyword{ htest }
-

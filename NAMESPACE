@@ -1,6 +1,6 @@
 export(cov.pi, covstats.pi, cov.mc, covstats.mc, mc.ci)
-export(AS.select, AS.test, mincrit, nn.ent, pls.abc, rsse, saABC, selectsumm, semiauto.abc, sse, stage2)
+export(AS.select, AS.test, mincrit, nn.ent, rsse, saABC, selectsumm, semiauto.abc, sse, stage2)
 export(combmat, fillcomb)
 useDynLib(abctools)
-import(abc,abind,pls,plyr)
+import(abc,abind,plyr,parallel)
 

@@ -1,4 +1,4 @@
-AS.test <-function(grid=10,x1,x2,supp){
+AS.test <-function(grid=10,x1,x2,supp=NULL){
 
 #NOTE: this function should be called *after* choosing statistic subsets
 

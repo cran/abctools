@@ -6,9 +6,10 @@
 Performs semi-automatic ABC based on summary statistics regression.
 }
 \usage{
-semiauto.abc(obs, param, sumstats, obspar = NULL, abcmethod = abc, saprop = 0.5, 
-abcprop = 0.5, overlap = FALSE, satr = list(), plot = FALSE, verbose = TRUE, 
-do.err = FALSE, final.dens = FALSE, errfn = rsse, ...)
+semiauto.abc(obs, param, sumstats, obspar=NULL, abcmethod = abc, 
+saprop = 0.5, abcprop = 0.5, overlap = FALSE, satr = list(), 
+plot = FALSE, verbose = TRUE, do.err = FALSE, final.dens = FALSE, 
+errfn = rsse, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -32,12 +33,13 @@ do.err = FALSE, final.dens = FALSE, errfn = rsse, ...)
 \value{ A list with the following components:
 \item{err}{simulation error (if \code{obspar} is supplied and \code{do.err=TRUE}).}
 \item{post.sample}{an array of dimension \code{nacc x npar x ndatasets} giving the posterior sample for each observed dataset.  Not returned if \code{final.dens=FALSE}.}
-\item{sainfo}{A list with the following information about the semi-automatic ABC run: \code{saprop}, \code{abcprop} ,\code{overlap}, \code{satr}.  See arguments for more details.}
+\item{sainfo}{A list with the following information about the semi-automatic ABC run:\cr \code{saprop}, \code{abcprop} ,\code{overlap}, \code{satr}.  See arguments for more details.}
 }
 
 \references{
-Blum, M. G. B, Nunes, M. A., Prangle, D. and Sisson, S. A. (2013) A comparative review of dimension reduction methods in approximate Bayesian 
-computation. \emph{Stat. Sci. (to appear)}.\cr\cr
+Blum, M. G. B, Nunes, M. A., Prangle, D. and Sisson, S. A. (2013) A
+comparative review of dimension reduction methods in approximate
+Bayesian computation. \emph{Stat. Sci.} \bold{28}, Issue 2, 189--208.\cr\cr
 Fearnhead, P. and Prangle, D. (2012) Constructing summary statistics for approximate Bayesian computation:
 semi-automatic approximate Bayesian computation. \emph{J. R. Stat. Soc. B} \bold{74}, Part 3, 1--28.
 }
@@ -64,7 +66,8 @@ simstats<-coal[,4:6]
 obsstats<-matrix(coalobs[1,4:6],nrow=1)
 obsparam<-matrix(coalobs[1,1])
 
-# perform semi-automatic ABC with summary statistics defined by X, X^2,X^3,X^4:
+# perform semi-automatic ABC with summary statistics defined by 
+# X, X^2,X^3,X^4:
 # other alternative specifications for this could be:
 # list(function(x){ cbind(x,x^2,x^3,x^4) })
 # list(as.function(alist(x=,cbind(x,x^2,x^3)))) etc
@@ -77,7 +80,8 @@ tmp$sa.info
 # both these functions may be problematic: 
 
 \dontrun{
- tmp<-semiauto.abc(obsstats, param, simstats,tol=.01,method="rejection",satr=list(unique,sum))
+ tmp<-semiauto.abc(obsstats, param, simstats,tol=.01,method="rejection",
+satr=list(unique,sum))
 }
 
 }

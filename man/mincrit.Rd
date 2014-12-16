@@ -8,9 +8,10 @@ Summary statistics selection by minimizing a posterior sample measure.
 The function cycles through all possible subsets of summary statistics and computes a criterion from the posterior sample.  The subset which achieves the minimum is chosen as the most informative subset.
 }
 \usage{
-mincrit(obs,param, sumstats, obspar=NULL, abcmethod=abc,crit=nn.ent,
-sumsubs=1:ncol(sumstats), limit = length(sumsubs), do.only = NULL, 
-verbose = TRUE, do.crit = TRUE, do.err=FALSE,final.dens=FALSE,errfn=rsse, ...)
+mincrit(obs, param, sumstats, obspar = NULL, abcmethod = abc,
+crit = nn.ent, sumsubs = 1:ncol(sumstats), limit=length(sumsubs), 
+do.only = NULL, verbose = TRUE, do.crit = TRUE, do.err = FALSE, 
+final.dens = FALSE, errfn = rsse, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -71,7 +72,8 @@ obsparam<-matrix(coalobs[1,1])
 
 # example of entropy minimization algorithm:
 
-tmp<-mincrit(obsstats, param, simstats,tol=.01,method="rejection",do.crit=TRUE)
+tmp <-mincrit(obsstats, param, simstats, tol=.01, method="rejection", 
+do.crit=TRUE)
 
 tmp$critvals
 

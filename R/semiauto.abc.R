@@ -1,7 +1,10 @@
 semiauto.abc<-function(obs, param,sumstats,obspar=NULL,abcmethod=abc,saprop=.5,abcprop=.5,overlap=FALSE,satr=list(),plot=FALSE,verbose=TRUE,do.err=FALSE,final.dens=FALSE,errfn=rsse,...){
 
-if(!is.matrix(obs)|is.data.frame(obs)){
-        obs<-as.matrix(obs,nrow=1)
+if(!is.matrix(obs)) {
+    obs <- matrix(obs, nrow=1)
+}
+if(is.data.frame(obs)){
+    obs <- as.matrix(obs)
 }
 if(!is.matrix(param)|is.data.frame(param)){
         param<-as.matrix(param)
@@ -127,8 +130,24 @@ obs.sa <-  obs.tr %*% t(sa$B)
 if(verbose){
 	cat("Doing ABC with sample size:",size2,"\n")
 }
+
+argl <- list(...)
+    targind <- match(names(argl), "tol")
+    targind <- which(!is.na(targind))
+    margind <- match(names(argl), "method")
+    margind <- which(!is.na(margind))
+    if ((length(targind) == 0) & identical(abcmethod, abc)) {
+        argl$tol <- 0.01
+    }
+    if ((length(margind) == 0) & identical(abcmethod, abc)) {
+        argl$method <- "rejection"
+    }
+    argl$target=obs.sa
+    argl$param=param[forabc,]
+    argl$sumstat=ss.sa[forabc,]
+    abcout.sa <-do.call(abcmethod,argl)
 	
-abcout.sa <- abcmethod(obs.sa, param[forabc,], ss.sa[forabc,], ...)
+    #abcout.sa <- abcmethod(obs.sa, param[forabc,], ss.sa[forabc,], ...)
 if(is.null(abcout.sa$adj.values)){
 	vals<-abcout.sa$unadj.values
 }

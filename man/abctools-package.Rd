@@ -8,8 +8,8 @@
 \tabular{ll}{
 Package: \tab abctools\cr
 Type: \tab Package\cr
-Version: \tab 0.3-2\cr
-Date: \tab 25-6-2014\cr
+Version: \tab 0.4\cr
+Date: \tab 16-12-2014\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }
@@ -28,13 +28,6 @@ Bayesian computation. \emph{Stat. Sci.} \bold{28}, Issue 2, 189--208.\cr\cr
 Fearnhead, P. and Prangle, D. (2012) Constructing summary statistics for approximate Bayesian computation: semi-automatic approximate Bayesian computation. \emph{J. R. Stat. Soc. B} \bold{74}, Part 3, 1--28.\cr\cr
 Joyce, P. and P. Marjoram (2008) Approximately sufficient statistics and Bayesian computation. \emph{Stat. Appl. Gen. Mol. Biol.} \bold{7} Article 26.\cr\cr
 Nunes, M. A. and Balding, D. J. (2010) On Optimal Selection of Summary Statistics for Approximate Bayesian Computation.  \emph{Stat. Appl. Gen. Mol. Biol.} \bold{9}, Iss. 1, Art. 34. \cr\cr
-Wegmann, D. et al. (2009) Efficient approximate Bayesian computation coupled With Markov chain Monte Carlo Without Likelihood. \emph{Genetics} \bold{182} (4), 1207--1218.
-
-For extra scripts used for \code{pls.abc}, see:
-
-Wegmann, D. et al. (2010) ABCtoolbox: A versatile toolkit for
-approximate Bayesian computations. \emph{BMC Bioinf.} \bold{11},
-116--123.
 
 Details of ABC coverage methods appear in:
 

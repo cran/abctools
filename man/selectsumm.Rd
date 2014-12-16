@@ -6,8 +6,8 @@ Generic function for selecting summary statistics in ABC inference.
 }
 \description{The function implements functions which implement summary statistics selection methods.}
 \usage{
-selectsumm(obs, param, sumstats, obspar = NULL, ssmethod = mincrit, verbose = TRUE, 
-final.dens = FALSE, ...)
+selectsumm(obs, param, sumstats, obspar=NULL, ssmethod = mincrit, 
+verbose = TRUE, final.dens = FALSE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -15,7 +15,8 @@ final.dens = FALSE, ...)
   \item{param}{matrix of simulated model parameter values.}
   \item{sumstats}{matrix of simulated summary statistics.}
   \item{obspar}{optional observed parameters (for use to assess simulation performance).}
-  \item{ssmethod}{a function to perform summary statistics selection.  Current methods are \code{AS.select} and \code{mincrit}.}
+  \item{ssmethod}{a function to perform summary statistics selection.  Current methods are \cr
+	\code{AS.select} and \code{mincrit}.}
   \item{verbose}{a boolean value indicating whether informative statements should be printed to screen.}
   \item{final.dens}{a boolean value indicating whether the posterior sample should be returned.}
   \item{\dots}{any other optional arguments to the summary selection procedure.}
@@ -35,13 +36,12 @@ The function is essentially a wrapper for more specific summary selection method
 }
 
 \references{
-Blum, M. G. B, Nunes, M. A., Prangle, D. and Sisson, S. A. (2013) A comparative review of dimension reduction methods in approximate Bayesian 
-computation. \emph{Stat. Sci. (to appear)}.\cr\cr
+Blum, M. G. B, Nunes, M. A., Prangle, D. and Sisson, S. A. (2013) A
+comparative review of dimension reduction methods in approximate
+Bayesian computation. \emph{Stat. Sci.} \bold{28}, Issue 2, 189--208.\cr\cr
 Fearnhead, P. and Prangle, D. (2012) Constructing summary statistics for approximate Bayesian computation: semi-automatic approximate Bayesian computation. \emph{J. R. Stat. Soc. B} \bold{74}, Part 3, 1--28.\cr\cr
 Joyce, P. and P. Marjoram (2008) Approximately sufficient statistics and Bayesian computation. \emph{Stat. Appl. Gen. Mol. Biol.} \bold{7} Article 26.\cr\cr
 Nunes, M. A. and Balding, D. J. (2010) On Optimal Selection of Summary Statistics for Approximate Bayesian Computation.  \emph{Stat. Appl. Gen. Mol. Biol.} \bold{9}, Iss. 1, Art. 34. \cr\cr
-Wegmann, D. et al. (2009) Efficient approximate Bayesian computation coupled With Markov chain Monte Carlo Without Likelihood. \emph{Genetics} \bold{182} (4), 1207--1218.\cr\cr
-Wegmann, D. et al. (2010) ABCtoolbox: A versatile toolkit for approximate Bayesian computations. \emph{BMC Bioinf.} \bold{11}, 116--123.
 }
 \author{Matt Nunes}
 %\note{
@@ -51,7 +51,7 @@ Wegmann, D. et al. (2010) ABCtoolbox: A versatile toolkit for approximate Bayesi
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{mincrit}}, \code{\link{AS.select}}, \code{\link{pls.abc}} 
+\code{\link{mincrit}}, \code{\link{AS.select}} 
 }
 
 \examples{
@@ -68,8 +68,8 @@ simstats<-coal[,4:6]
 
 obsstats<-matrix(coalobs[1,4:6],nrow=1)
 
-tmp<-selectsumm(obsstats, param, simstats,ssmethod=AS.select,tol=.1,method="rejection",
-allow.none=FALSE,inturn=TRUE,hcorr=TRUE)
+tmp<-selectsumm(obsstats, param, simstats, ssmethod =AS.select, tol =.1,
+method = "rejection", allow.none = FALSE, inturn = TRUE, hcorr = TRUE)
 
 tmp$best
 

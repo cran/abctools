@@ -1,4 +1,4 @@
-selectsumm <-function (obs,param, sumstats, obspar=NULL, ssmethod = mincrit, verbose=TRUE,final.dens=FALSE, ...) {
+selectsumm <-function (obs,param, sumstats, obspar=NULL, ssmethod=mincrit, verbose=TRUE,final.dens=FALSE, ...) {
 
 if(!is.matrix(obs)|is.data.frame(obs)){
         obs<-matrix(obs,nrow=1)
@@ -18,19 +18,18 @@ if(!is.null(obspar)|is.data.frame(obspar)){
 	}
 }
 
-argl <- as.list(match.call())
+if (!length(colnames(param))) {
+        colnames(param) <- paste("P", 1:ncol(param), sep = "")
+}
+if (!length(colnames(sumstats))) {
+        colnames(sumstats) <- paste("C", 1:ncol(sumstats), sep = "")
+}
 
-smargind <-match(names(argl),"ssmethod")
-smargind <-which(!is.na(smargind))
-sm<-as.character(argl[[smargind]])
-
+argl <- list(...)
+sumsubs<-1:ncol(sumstats)
 ssargind <-match(names(argl),"sumsubs")
 ssargind <-which(!is.na(ssargind))
-
-if (length(ssargind)==0){
-        sumsubs<-1:ncol(sumstats)
-}
-else{
+if (length(ssargind)>0){
 	sumsubs<-eval(argl[[ssargind]])
 }
 
@@ -50,26 +49,17 @@ nstats<-ncol(obs)
 err <- critvals <- best<-vals<-NULL
 
 record<-matrix(0,ndatasets,length(sumsubs))
+colnames(record)<-paste("S",sumsubs,sep="")
+rownames(record)<-rep("",ndatasets)
 
-if(sm=="pls.abc"){
-	tmp<-pls.abc(obs,param,sumstats, obspar=NULL,...)
-	record<-NULL
-	if(!is.null(tmp$err)){    
-        	err<-tmp$err
-	}
-	if(!is.null(tmp$post.sample)){
-        	vals<-tmp$post.sample
-		final.dens<-TRUE
-	}
-}
-else{
 	for (i in 1:ndatasets) {
-		if(verbose){
+	#	if(verbose){
         		cat("dataset...", i, "\n")
-		}
+	#	}
 		resi<-ssmethod(obs[i,],param, sumstats, obspar[i,], verbose = verbose,final.dens=final.dens, ...)
 		if(!is.null(resi$best)){
 			record[i,resi$best]<-1
+			rownames(record)[i]<-rownames(resi$best)
 		}
         	if(!is.null(resi$err)){    
     		    err <- rbind(err, resi$err)
@@ -86,7 +76,6 @@ else{
 			}
         	}
 	}
-}
 
 l<-list()
 
@@ -105,7 +94,7 @@ if(final.dens){
 }
 
 if(!is.null(resi$order)){
-	l$order<-resi$order
+	l$posssubs<-resi$posssubs
 }
 if(!is.null(resi$sainfo)){
 	l$sainfo<-resi$sainfo

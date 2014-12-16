@@ -61,10 +61,9 @@ saABC(theta, X, plot = TRUE)
   \item{BICs }{Vector of BIC values for each fitted regression.}
 }
 \references{
-Blum, M. G. B., Nunes M. A., Prangle D. and Sisson S. A. (2013) A
+Blum, M. G. B, Nunes, M. A., Prangle, D. and Sisson, S. A. (2013) A
 comparative review of dimension reduction methods in approximate
-Bayesian computation. \emph{Statistical Science (to appear)}.\cr\cr
-
+Bayesian computation. \emph{Stat. Sci.} \bold{28}, Issue 2, 189--208.\cr\cr
 Fearnhead, P. and Prangle, D. (2012) Constructing summary statistics for approximate Bayesian computation: 
 semi-automatic approximate Bayesian
 computation. \emph{J. R. Stat. Soc. B} \bold{74}, Part 3, 1--28.
