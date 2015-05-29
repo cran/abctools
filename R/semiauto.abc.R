@@ -36,13 +36,13 @@ if(overlap){
 	# allow for "overlapping" indices of sims for construction / abc.
 
 	tobuild <- sample(1:nsims,size1)
-	forabc <- sample(1:nsims,size1)
+	forabc <- sample(1:nsims,size2)
 }
 else{
 	tobuild <- sample(1:nsims,size1)
 
 	nobuild <- setdiff(1:nsims,tobuild)
-	forabc <- sample(nobuild,size1)
+	forabc <- sample(nobuild,size2)
 }
 
 ##SEMI-AUTOMATIC ABC
