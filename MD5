@@ -1,6 +1,6 @@
-047159467441ac4284e50c99bdecd3fa *DESCRIPTION
-6481d7f4fe808c8d51c0676749dea295 *NAMESPACE
-4b395dfc42fef05b22c2d67cd7f297d2 *R/AS.select.R
+7f1e8d714adc6cc3ebd7c3a6ca3ce1cc *DESCRIPTION
+c7a24b2907304d20affc8803e8731aa6 *NAMESPACE
+d3e389520d601b128ea4137ca5c4397e *R/AS.select.R
 9ef37aaedfdde986687e4fa5fdd4bcbc *R/AS.test.R
 9a297b9511f23b62ac83d61f11b3903a *R/combmat.R
 5f9d2a919e3b8898c3d8a4f53975429b *R/cov.mc.R
@@ -15,12 +15,13 @@ d92b82e4137316488322b0c96a3e23ea *R/selectsumm.R
 1cb1c553f297d0b138abc6a6e3310b4f *R/sse.R
 c694d0f9e801a54f422d6fda582ff447 *R/stage2.R
 7c086114c04871cd1ccfa2b520fd6266 *R/zzz.R
-e9a2ba57ce6383f692db1e1cc712d6fc *data/coal.rda
-a9dff020c59c719db89cb8c72e8e3222 *data/coalobs.rda
+41ab7733002329f488af80fcd65e4c28 *data/coal.rda
+1f13414e8248b152d7fc4683fce20cd3 *data/coalobs.rda
 8dd7540e9da4d98c48581d6e995bc3b6 *data/datalist
-fdb749e3667bfd880669effa6e866670 *man/AS.select.Rd
+338298518961c8c441d034f71ad48c00 *inst/CITATION
+d0ab132f372686c9b3cb4156582d9919 *man/AS.select.Rd
 62d4f98859c5dd0f485b2af6a662ad1c *man/AS.test.Rd
-b02027eddd744b0ca2d8b56467e79521 *man/abctools-package.Rd
+d1e45a9fc19f27358fcbf2898d32c164 *man/abctools-package.Rd
 aa895b24cb47e77b9f21e6b19deed2b1 *man/coal.Rd
 7fc06c87dec3b13e8a9f15d915c60693 *man/combmat.Rd
 f865040f69e93f4d1a196275ec37ddc9 *man/cov.pi.Rd
