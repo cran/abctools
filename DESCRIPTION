@@ -1,10 +1,10 @@
 Package: abctools
 Type: Package
 Title: Tools for ABC Analyses
-Version: 1.1.1
-Date: 2017-04-19
+Version: 1.1.3
+Date: 2018-07-17
 Authors@R: c(person("Matt","Nunes",role=c("aut","cre"),
-        email="m.nunes@lancaster.ac.uk"),person("Dennis", "Prangle",
+        email="nunesrpackages@gmail.com"),person("Dennis", "Prangle",
         role="aut",email="d.b.prangle@newcastle.ac.uk"),
 	person("Guilhereme", "Rodrigues", role="ctb",
 	email="g.rodrigues@unsw.edu.au"))
@@ -15,11 +15,12 @@ License: GPL (>= 2)
 LazyLoad: yes
 URL: https://github.com/dennisprangle/abctools
 BugReports: https://github.com/dennisprangle/abctools/issues
+RoxygenNote: 6.0.1
 NeedsCompilation: yes
-Packaged: 2017-04-19 19:26:27 UTC; dennis
+Packaged: 2018-07-17 13:51:45 UTC; dennis
 Author: Matt Nunes [aut, cre],
   Dennis Prangle [aut],
   Guilhereme Rodrigues [ctb]
-Maintainer: Matt Nunes <m.nunes@lancaster.ac.uk>
+Maintainer: Matt Nunes <nunesrpackages@gmail.com>
 Repository: CRAN
-Date/Publication: 2017-04-20 09:19:08 UTC
+Date/Publication: 2018-07-17 23:20:02 UTC
