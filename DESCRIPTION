@@ -1,8 +1,8 @@
 Package: abctools
 Type: Package
 Title: Tools for ABC Analyses
-Version: 1.1.6
-Date: 2023-03-24
+Version: 1.1.7
+Date: 2023-09-18
 Authors@R: c(
     person("Matt","Nunes",role=c("aut","cre"),email="nunesrpackages@gmail.com"),
     person("Dennis","Prangle",role="aut",email="dennis.prangle@bristol.ac.uk"),
@@ -21,6 +21,6 @@ Author: Matt Nunes [aut, cre],
   Dennis Prangle [aut],
   Guilherme Rodrigues [ctb]
 Maintainer: Matt Nunes <nunesrpackages@gmail.com>
-Packaged: 2023-03-25 09:15:15 UTC; dennis
+Packaged: 2023-09-18 10:17:20 UTC; matt
 Repository: CRAN
-Date/Publication: 2023-03-26 10:20:12 UTC
+Date/Publication: 2023-09-18 10:40:02 UTC
